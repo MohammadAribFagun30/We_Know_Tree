@@ -87,7 +87,7 @@ void inOrder(nodeptr p)
     if (p != NULL)
     {
         inOrder(p->left);
-        printf("%d ", p->info);
+        cout << p->info << " ";
         inOrder(p->right);
     }
 }
@@ -96,7 +96,7 @@ void preOrder(nodeptr p)
 {
     if (p != NULL)
     {
-        printf("%d ", p->info);
+        cout << p->info << " ";
         preOrder(p->left);
         preOrder(p->right);
     }
@@ -108,7 +108,7 @@ void postOrder(nodeptr p)
     {
         postOrder(p->left);
         postOrder(p->right);
-        printf("%d ", p->info);
+        cout << p->info << " ";
     }
 }
 
@@ -116,20 +116,20 @@ void Display()
 {
     if (root)
     {
-        printf("\nTraverse Tree INORDER\n");
+        cout << "\nTraverse Tree INORDER\n";
         inOrder(root);
 
-        printf("\nTraverse Tree PREORDER\n");
+        cout << "\nTraverse Tree PREORDER\n";
         preOrder(root);
 
-        printf("\nTraverse Tree POSTORDER\n");
+        cout << "\nTraverse Tree POSTORDER\n";
         postOrder(root);
 
-        printf("\n");
+        cout << "\n";
     }
     else
     {
-        printf("\nBST IS NULL\n");
+        cout << "\nBST IS NULL\n";
     }
 }
 
@@ -137,13 +137,13 @@ int menu()
 {
     int n;
 
-    printf("\n\nMain Menu\n");
-    printf("1. Insert\n");
-    printf("2. Delete\n");
-    printf("3. Display\n");
-    printf("4. Exit\n\n");
-    printf("Enter Choice(1-4): ");
-    scanf("%d", &n);
+    cout << "\n\nMain Menu\n";
+    cout << "1. Insert\n";
+    cout << "2. Delete\n";
+    cout << "3. Display\n";
+    cout << "4. Exit\n\n";
+    cout << "Enter Choice(1-4): ";
+    cin >> n;
 
     return n;
 }
@@ -159,14 +159,14 @@ int main()
 
         if (n == 1)
         {
-            printf("\nInsert a value: ");
-            scanf("%d", &VAL);
+            cout << "\nInsert a value: ";
+            cin >> VAL;
             insertNode(VAL);
         }
         else if (n == 2)
         {
-            printf("\nEnter value to delete: ");
-            scanf("%d", &VAL);
+            cout << "\nEnter value to delete: ";
+            cin >> VAL;
             root = deleteNode(root, VAL);
         }
         else if (n == 3)
@@ -179,7 +179,7 @@ int main()
         }
         else
         {
-            printf("\nWrong Choice\n");
+            cout << "\nWrong Choice\n";
         }
     }
 
